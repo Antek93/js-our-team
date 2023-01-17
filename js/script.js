@@ -10,39 +10,39 @@ const team = [];
 
 const personOne = {
 
-    firstName: 'Waybe Barnett ',
-    role: 'Founder & CEO ',
-    image: 'wayne-bamett-founder-Comment.jpg'
+    firstName:'Waybe Barnett ',
+    role:'Founder & CEO ',
+    photo:'wayne-barnett-founder-ceo.jpg'
 
 }; const personTwo = {
 
-    firstName: 'Angela Caroll ',
-    role: 'Chief Editor ',
-    image: 'angela-caroll-chief-editor.jpg'
+    firstName:'Angela Caroll ',
+    role:'Chief Editor ',
+    photo:'angela-caroll-chief-editor.jpg'
 
 }; const personThree = {
 
-    firstName: 'Walter Gordon ',
-    role: 'Office Manager ',
-    image: 'walter-gordon-office-manager.jpg'
+    firstName:'Walter Gordon ',
+    role:'Office Manager ',
+    photo:'walter-gordon-office-manager.jpg'
 
 }; const personFour = {
 
-    firstName: 'Angela Lopez ',
-    role: 'Social Media Manager ',
-    image: 'angela-lopez-social-media-manager.jpg'
+    firstName:'Angela Lopez ',
+    role:'Social Media Manager ',
+    photo:'angela-lopez-social-media-manager.jpg'
 
 }; const personFive = {
 
-    firstName: 'Scott Estrada ',
-    role: 'Developer ',
-    image: 'scott-estrada-developer.jpg'
+    firstName:'Scott Estrada ',
+    role:'Developer ',
+    photo:'scott-estrada-developer.jpg'
 
 }; const personSix = {
 
-    firstName: 'Barbara Ramos ',
-    role: 'Graphic Designer',
-    image: 'barbara-ramos-graphic-designer.jpg'
+    firstName:'Barbara Ramos ',
+    role:'Graphic Designer',
+    photo:'barbara-ramos-graphic-designer.jpg'
 
 };
 
@@ -79,7 +79,7 @@ console.log('Array team:', team);
 console.log('Lunghezza Array;', team.length)
 
 
-for (let i = 0; i <= team.length; i++) {
+for (let i = 0; i < team.length; i++) {
 
     console.log(team[i]); //Per vedere tutti gli oggetti insieme.
 
@@ -106,9 +106,17 @@ for (let i = 0; i <= team.length; i++) {
 // MILESTONE 2:
 // Stampare le stesse informazioni su DOM sottoforma di stringhe.
 
+
+
+// +
+
+
+// BONUS 1:
+// Trasformare la stringa foto in una immagine effettiva.
+
 let teamList = document.querySelector('.team')
 
-for (let i = 0; i <= team.length; i++) {
+for (let i = 0; i < team.length; i++) {
     
     // let newListItem = document.createElement('li');
     // newListItem.innerHTML = team[i].name + ' - ' + + team[i].photo;
@@ -119,8 +127,8 @@ for (let i = 0; i <= team.length; i++) {
     let newListItem = document.createElement('li');
     newListItem.innerHTML = `
     <div class="member">
-        <div class="profilo-photo-container">
-            ${team[i].image}
+        <div class="profilo">
+            <img src="img/${team[i].photo}"> 
         </div>
         <h3>
             ${team[i].firstName}
@@ -131,10 +139,8 @@ for (let i = 0; i <= team.length; i++) {
     </div>
     `;
 
+    teamList.append(newListItem);
 }
-
-teamList.append(newListItem);
-
 
 // BONUS 1:
 // Trasformare la stringa foto in una immagine effettiva.
