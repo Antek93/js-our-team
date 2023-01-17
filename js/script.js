@@ -6,6 +6,8 @@ console.log('HI, I am java and I am working fine');
 // MILESTONE 0:
 // Creare l'array di oggetti con le informazioni fornite.
 
+const team = [];
+
 const personOne = {
 
     firstName: 'Waybe Barnett ',
@@ -58,70 +60,92 @@ for (let key in personOne) {
 
 }
 
+// Per inserire gli oggetti nell'array
+
+team.push(personOne); // Valore 0
+team.push(personTwo); // Valore 1
+team.push(personThree); // Valore 2
+team.push(personFour); // Valore 3
+team.push(personFive); // Valore 4
+team.push(personSix); // Valore 5
+
+// .push() può accettare anche piu elementi:
+
+// team.push(personOne, personTwo, personThree, personFour, personFive, personSix)
+
+// <---Verifica array di oggetti--->
+
+console.log('Array team:', team);
+console.log('Lunghezza Array;', team.length)
+
+
+for (let i = 0; i <= team.length; i++) {
+
+    console.log(team[i]); //Per vedere tutti gli oggetti insieme.
+
+//     // Per vedere tutti gli oggetti uno ad uno 
+//     console.log('Nome:', team[i].firstName)
+//     console.log('Ruolo:', team[i].role)
+//     console.log('Foto:', team[i].photo)
+
+// // Versione alternativa
+//     console.log('Nome:', team[i]['firstName'])
+//     console.log('Ruolo:', team[i]['role'])
+//     console.log('Foto:', team[i]['photo'])
+
+
+    for (let key in team[i]) {
+        
+        console.log(key + ':', team[i][key])
+
+    }
+
+    
+}
 
 // MILESTONE 2:
 // Stampare le stesse informazioni su DOM sottoforma di stringhe.
 
+let teamList = document.querySelector('.team')
 
+for (let i = 0; i <= team.length; i++) {
+    
+    // let newListItem = document.createElement('li');
+    // newListItem.innerHTML = team[i].name + ' - ' + + team[i].photo;
+    // teamList.append(newListItem);
 
-    for (let key in personOne) {
+    // oppure
 
-        let newDiv = document.createElement('div');
-        let box = document.querySelector('.box');
-        box.classList.add('contenitore');
-        newDiv = personOne[key];
-        box.append(newDiv);
-    }
+    let newListItem = document.createElement('li');
+    newListItem.innerHTML = `
+    <div class="member">
+        <div class="profilo-photo-container">
+            ${team[i].image}
+        </div>
+        <h3>
+            ${team[i].firstName}
+        </h3>
+        <h5>
+            ${team[i].role}
+        </5>
+    </div>
+    `;
 
-    for (let key in personTwo) {
+}
 
-        let newDiv = document.createElement('div');
-        let box = document.querySelector('.box');
-        box.classList.add('contenitore');
-        newDiv = personTwo[key];
-        box.append(newDiv);
-    }
-
-    for (let key in personThree) {
-
-        let newDiv = document.createElement('div');
-        let box = document.querySelector('.box');
-        box.classList.add('contenitore');
-        newDiv = personThree[key];
-        box.append(newDiv);
-    }
-
-    for (let key in personFour) {
-
-        let newDiv = document.createElement('div');
-        let box = document.querySelector('.box');
-        box.classList.add('contenitore');
-        newDiv = personFour[key];
-        box.append(newDiv);
-    }
-
-    for (let key in personFive) {
-
-        let newDiv = document.createElement('div');
-        let box = document.querySelector('.box');
-        box.classList.add('contenitore');
-        newDiv = personFive[key];
-        box.append(newDiv);
-    }
-
-    for (let key in personSix) {
-
-        let newDiv = document.createElement('div');
-        let box = document.querySelector('.box');
-        box.classList.add('contenitore');
-        newDiv = personSix[key];
-        box.append(newDiv);
-    }
-
+teamList.append(newListItem);
 
 
 // BONUS 1:
 // Trasformare la stringa foto in una immagine effettiva.
 
+
+
 // BONUS 2:
 // Organizzare i singoli membri in card/schede.
+
+
+
+// Correzione esercizio 
+
+
